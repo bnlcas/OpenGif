@@ -16,7 +16,8 @@ This algorithm relies on a semantic space representation of english tokens. The 
 
 ## Contributing:
 This project is very new, and a lot needs to be done. Some things we need:
-1.) A website demonstrating the basic functionality.
-2.) Figure out how to host this and make it run well server side.
-3.) Improve the performance of the search algorithm runs (switch to C++)
-4.) Adding gifs we need more gifs to be added to the database.
+
+1. A website demonstrating the basic functionality.
+2. Figure out how to host this and make it run well server side.
+3. Improve the performance of the search algorithm runs (switch to C++)
+4. Adding gifs we need more gifs to be added to the database.

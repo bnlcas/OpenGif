@@ -7,17 +7,26 @@ Created on Sun Mar 11 13:11:32 2018
 """
 import numpy as np
 import io
+import json
 
 class GifFinder():
     def __init__(self, total_word_count = 20000, word_vector_datafile = '../WordVectors/word_vectors.txt'):
         self.word_vector_dimension = 200
         self.total_word_count = 20000
-        self.LoadWordVecs(total_word_count, total_word_count, word_vector_datafile)
         self.LoadGifData()
+        self.LoadWordVecs(total_word_count, word_vector_datafile)
         self.GenerateGifMatrix()
 
+    def LoadGifData(self):
+        f = open('../GIF_Data/gif_data.json', 'r')
+        json_data = json.load(f)
+        gif_data = json_data['gifs']
+        self.gif_filenames = [gif['filename']  for gif in gif_data]
+        self.gif_titles = [gif['title']  for gif in gif_data]
+        self.gif_descriptions = [gif['description']  for gif in gif_data]
+
     def LoadWordVecs(self, n_words, word_vector_datafile):
-        data = self.LoadWordVecRaw(n_words)
+        data = self.LoadWordVecRaw(n_words, word_vector_datafile)
         word_mat = np.zeros([len(data), self.word_vector_dimension])
         word_dict = {}
         row_ind = 0
@@ -40,19 +49,9 @@ class GifFinder():
             f.close()
         return data
 
-    def LoadGifData(self):
-        with open('../GIF_Data/gif_description.txt', 'r') as f:
-            raw_txt_data = f.readlines()
-        raw_gif_data = [x for x in raw_txt_data if(x[0] != '\n' and x[0] != '#')]
-        #TODO: parse gif_data:
-        gif_ids = [gif_data[0] for gif_data in raw_gif_data]
-        gif_description = [gif_data[1] for gif_data in raw_gif_data]
-        self.gif_ids = gif_ids
-        self.gif_description = gif_description
-
     def GenerateGifMatrix(self):
-        gif_matrix = np.zeros([len(self.gif_description), self.word_vector_dimension])
-        for i, gif in enumerate(self.gif_description):
+        gif_matrix = np.zeros([len(self.gif_descriptions), self.word_vector_dimension])
+        for i, gif in enumerate(self.gif_descriptions):
             vec = MakePhraseVec(gif)
             gif_matrix[i,:] = vec
         self.gif_matrix = gif_matrix

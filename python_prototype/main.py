@@ -1,7 +1,6 @@
 from GifFinder import GifFinder
 
 gif_finder = GifFinder(total_word_count = 20000, word_vector_datafile = '../WordVectors/word_vectors.txt')
-gif_finder.FindGif()
 
 test_phrase = 'party'
 search_result_inds = gif_finder.FindGif(test_phrase)

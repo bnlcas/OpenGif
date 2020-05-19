@@ -1,0 +1,14 @@
+{
+  "gifs": [
+    {
+        "title" : "Cat",
+        "filename" : "cat.gif",
+        "description" : "cat typing computer"
+    },
+    {
+        "title" : "Kermit Dancing",
+        "filename" : "from.gif",
+        "description" : "dancing frog muppet"
+    }
+  ]
+}
