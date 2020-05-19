@@ -10,12 +10,14 @@ import io
 import json
 
 class GifFinder():
-    def __init__(self, total_word_count = 20000, word_vector_datafile = '../WordVectors/word_vectors.txt'):
-        self.word_vector_dimension = 200
-        self.total_word_count = 20000
+    def __init__(self, word_vector_datafile = '../WordVectors/word_vectors.vec', total_word_count = 20000):
+        self.word_vector_dimension = 300
+        self.total_word_count = total_word_count
         self.LoadGifData()
-        self.LoadWordVecs(total_word_count, word_vector_datafile)
-        self.GenerateGifMatrix()
+        print('loading word vectors')
+        self.word_dict = self.LoadWordVectors(word_vector_datafile, total_word_count)
+        self.gif_matrix = self.GenerateGifMatrix()
+        print('ready')
 
     def LoadGifData(self):
         f = open('../GIF_Data/gif_data.json', 'r')
@@ -25,60 +27,50 @@ class GifFinder():
         self.gif_titles = [gif['title']  for gif in gif_data]
         self.gif_descriptions = [gif['description']  for gif in gif_data]
 
-    def LoadWordVecs(self, n_words, word_vector_datafile):
-        data = self.LoadWordVecRaw(n_words, word_vector_datafile)
-        word_mat = np.zeros([len(data), self.word_vector_dimension])
+    def LoadWordVectors(self, word_vector_datafile, n_words):
+        f = io.open(word_vector_datafile, 'r', encoding='utf-8', newline='\n', errors='ignore')
+        n, d = map(int, f.readline().split())
+        self.word_vector_dimension = d
         word_dict = {}
-        row_ind = 0
-        for row in data:
-            entries = row.split(' ')
-            word_dict[entries[0]] = row_ind
-            vec = [float(entries[i]) for i in range(1,self.word_vector_dimension + 1)]
-            word_mat[row_ind,:] = vec
-            row_ind += 1
-        self.word_dict = word_dict
-        self.word_matrix = word_mat
-
-    def LoadWordVecRaw(self, n_tokens, word_vector_datafile):
-        f = open(word_vector_datafile,'r')
-        f.readline()
-        f.readline() # Remove first two lines of header data
-        data = []
-        for i in range(n_tokens):
-            data.append(f.readline())
-            f.close()
-        return data
+        if(n_words <= 0):
+            n_words = n
+        else:
+            n_words = min(n, n_words)
+        for i in range(n_words):
+            line = f.readline()
+            tokens = line.rstrip().split(' ')
+            word_dict[tokens[0]] = [float(x) for x in tokens[1:]]
+        return word_dict
 
     def GenerateGifMatrix(self):
         gif_matrix = np.zeros([len(self.gif_descriptions), self.word_vector_dimension])
         for i, gif in enumerate(self.gif_descriptions):
-            vec = MakePhraseVec(gif)
+            vec = self.MakePhraseVector(gif)
             gif_matrix[i,:] = vec
-        self.gif_matrix = gif_matrix
+        return gif_matrix
 
-    def MakePhraseVec(self, phrase):
+    def MakePhraseVector(self, phrase):
+        phrase = phrase.lower()
         stop_chars = [':', ';', '-',',']
         for c in stop_chars:
             phrase = phrase.replace(c,' ')
         words = phrase.lower().split(' ')
-        words = [w for w in words if len(w) > 1]
-        word_inds = []
+        words = [w for w in words if len(w) > 1 and w in self.word_dict]
+        phrase_vec = []
         for w in words:
-            try:
-                word_inds.append(self.word_dict[w])
-            except:
-                print('word not found in dictionary')
-        if(len(word_inds) > 0):
-            phrase_mat = self.word_matrix[word_inds,:]
-            phrase_vec = np.sum(phrase_mat, axis=0)
+            if(len(phrase_vec) == 0):
+                phrase_vec = self.word_dict[w]
+            else:
+                phrase_vec = np.add(phrase_vec, self.word_dict[w])
+        if(len(words) > 0):
             phrase_vec_norm = phrase_vec/(np.linalg.norm(phrase_vec))
             return phrase_vec_norm
         else:
             print('no words recognized in phrase')
-            return np.zeros([1,self.word_vector_dimension])
+            return [1/np.sqrt(self.word_vector_dimension)] * self.word_vector_dimension
 
     def FindGif(self, search_phrase, n_results = 5):
-        search_phrase_vector = MakePhraseVec(search_phrase)
+        search_phrase_vector = self.MakePhraseVector(search_phrase)
         similarity = np.matmul(self.gif_matrix, np.transpose(search_phrase_vector))
         sort_inds = np.flipud(np.argsort(similarity))
         return list(sort_inds[0:n_results])
