@@ -6,10 +6,15 @@ The basic functionality is similar to exiting gif search engines like Tenor and 
 Run `./setup.sh` to download and install the necessary data. This will download a set of word vectors from
 [Facebook's FastText Word Vectors](https://fasttext.cc/docs/en/english-vectors.html).
 
-#### Python Version (WIP as of 2020-05-18):
-Runs on Python 3.6, and requires numpy.
-Run `python3 search_gif.py`
-Enter a search query and a description of the gif will come back
+#### Python Version (WIP as of 2020-05-20):
+Runs on Python 3.6, and requires numpy (full requirements.txt file still pending...).
+In the terminal run:
+```bash
+cd python_prototype/
+python3 demo.py
+```
+Enter a search query and a description of the gif will come back.
+An preliminary Flask prototype for a server based solution can be found in `/python_prototype/main.py` and this will serve the site found in `/web_interface`.
 
 ## How it works:
 This algorithm relies on a semantic space representation of english tokens. The dot product is used to quickly calculate the distance  to calculate the semantic similarity between a search phrase a database of gifs.
