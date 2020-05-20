@@ -16,22 +16,21 @@ $(document).ready(function () {
 function SearchGIFs()
 {
   var query = entryField.value;
-  /*
-  $.ajax({
-    type: "POST",
-    url: search_url,
-    data : {
-      id: 1,
-      search: 'test',
-    },
-    success:
-    contentType: "application/json",
-  });
-  */
-  //{search: 'test'},
-  $.post(search_url,
-     'test',
-     function(result){
-      outputDisplay.innerText = "Suggestions: " + result;
-  });
+  var send_data = JSON.stringify({id: 1, search: query})
+  console.log(send_data);
+
+  $.ajax(
+    {
+      type: 'POST',
+      url: search_url,
+      data: send_data,
+      dataType: 'json',
+      success : UpdateDisplay
+    });
+}
+
+function UpdateDisplay(results)
+{
+  search_term = results;
+  outputDisplay.innerText = "Suggestions: " + results.result1;
 }
