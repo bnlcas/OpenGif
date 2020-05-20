@@ -5,7 +5,7 @@ from GifFinder import GifFinder
 import json
 
 gif_finder = GifFinder(word_vector_datafile = '../WordVectors/word_vectors.vec', total_word_count = 10000)
-app = Flask(__name__,  template_folder='../web_interface')
+app = Flask(__name__,  template_folder='../web_interface', static_folder='../web_interface/static')
 #static_folder='web/static',
 #template_folder='web/templates'
 
