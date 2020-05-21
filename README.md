@@ -7,10 +7,11 @@ Run `./setup.sh` to download and install the necessary data. This will download 
 [Facebook's FastText Word Vectors](https://fasttext.cc/docs/en/english-vectors.html).
 
 #### Python Version (WIP as of 2020-05-20):
-Runs on Python 3.6, and requires numpy (full requirements.txt file still pending...).
+Runs on Python 3.6, and requires Numpy & Flask.
 In the terminal run:
 ```bash
 cd python_prototype/
+pip3 install -r requirements.txt
 python3 demo.py
 ```
 Enter a search query and a description of the gif will come back.
