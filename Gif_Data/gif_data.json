@@ -3,12 +3,302 @@
     {
         "title" : "Cat",
         "filename" : "cat.gif",
-        "description" : "cat typing computer knowledge"
+        "description" : "cat typing computer work"
     },
     {
         "title" : "Kermit Dancing",
-        "filename" : "from.gif",
+        "filename" : "frog.gif",
         "description" : "dancing frog muppet song"
+    },
+    {
+      "title" : "Chicken DJ",
+      "filename" : "chicken.gif",
+      "description" : "chicken music dance"
+    },
+    {
+      "title" : "Dancing Skeleton",
+      "filename" : "Dancing_skull.gif",
+      "description" : "skeleton dance"
+    },
+    {
+      "title" : "Zombie Rising",
+      "filename" : "Zombie-sits-up-in-the-grave.gif",
+      "description" : "zombie grave dead"
+    },
+    {
+      "title" : "Corpse Crawling",
+      "filename" : "Stayin-alive.gif",
+      "description" : "zombie corpse dead"
+    },
+    {
+      "title" : "3d Wiggle",
+      "filename" : "WiggleVision.gif",
+      "description" : "desert hula"
+    },
+    {
+      "title" : "Chocolate Hearts",
+      "filename" : "Animated-valentines-chocolate.gif",
+      "description" : "heart love"
+    },
+    {
+      "title" : "Tropical Beach",
+      "filename" : "tropical-beach.gif",
+      "description" : "beach"
+    },
+    {
+      "title" : "Ocean Sunset",
+      "filename" : "ocean_sunset.gif",
+      "description" : "ocean sunset"
+    },
+    {
+      "title" : "Human Dolphin",
+      "filename" : "Human-dolphin.gif",
+      "description" : "swimming"
+    },
+    {
+      "title" : "faucet",
+      "filename" : "faucet.g",
+      "description" : "water drop"
+    },
+    {
+      "title" : "werewolf",
+      "filename" : "5081_1b73_495.gif",
+      "description" : "wolf confused"
+    },
+    {
+      "title" : "wtf dancing",
+      "filename" : "Moving-animated-picture-of-two-dancers.gif",
+      "description" : "strange dancing"
+    },
+    {
+      "title" : "Beard Shave",
+      "filename" : "funny-gifs-beard-alaga.gif",
+      "description" : "beard"
+    },
+    {
+      "title" : "UFO",
+      "filename" : "ufo112.gif",
+      "description" : "alien"
+    },
+    {
+      "title" : "campfire",
+      "filename" : "campfire-flames.gif",
+      "description" : "fire"
+    },
+    {
+      "title" : "burning house",
+      "filename" : "Animated-building-on-fire-burning-down.gif",
+      "description" : "burning house"
+    },
+    {
+      "title" : "candles",
+      "filename" : "candles-burning.gif",
+      "description" : "candle"
+    },
+    {
+      "title" : "soccer fail",
+      "filename" : "soccer_fail.gif",
+      "description" : "soccer football fail"
+    },
+    {
+      "title" : "soccer fail",
+      "filename" : "fakesoccerfightvbzk.gif",
+      "description" : "fake soccer"
+    },
+    {
+      "title" : "mermaid",
+      "filename" : "2j3gsas.gif",
+      "description" : "mermaid"
+    },
+    {
+      "title" : "Money Flip",
+      "filename" : "Counting-money-animation.gif",
+      "description" : "money"
+    },
+    {
+      "title" : "$100",
+      "filename" : "Moving-picture-flipping-through-hundred-dollar-bills-gif-animation.gif",
+      "description" : "money"
+    },
+    {
+      "title" : "$100",
+      "filename" : "Moving-picture-flipping-through-hundred-dollar-bills-gif-animation.gif",
+      "description" : "money"
+    },
+    {
+      "title" : "parrot dance",
+      "filename" : "pretty-birds-dancing-animated-gif.gif",
+      "description" : "birds parrot"
+    },
+    {
+      "title" : "music notes",
+      "filename" : "little_music_note.gif",
+      "description" : "music notes"
+    },
+    {
+      "title" : "see no evil",
+      "filename" : "animated-hear-see-speak-no-evil-moving-woman.gif",
+      "description" : "evil"
+    },
+    {
+      "title" : "Obama Dancing",
+      "filename" : "fgY3C.gif",
+      "description" : "president dancing"
+    },
+    {
+      "title" : "Obama Skateboarding",
+      "filename" : "Gif-Obama.gif",
+      "description" : "skateboard"
+    },
+    {
+      "title" : "Obama Headshake",
+      "filename" : "Obama_hurr.gif",
+      "description" : "obama headshake"
+    },
+    {
+      "title" : "happy birthday",
+      "filename" : "Happy-birthday-Elvis-Weatercock-animated-gif.gif",
+      "description" : "happy birthday"
+    },
+    {
+      "title" : "gears",
+      "filename" : "gears-turning-slowly.gif",
+      "description" : "gears machine"
+    },
+    {
+      "title" : "pizza dog",
+      "filename" : "tCheZ.gif",
+      "description" : "pizza dog"
+    },
+    {
+      "title" : "Dancing girl",
+      "filename" : "Animated-dancing-girl-in-white-blouse.gif",
+      "description" : "dancing woman"
+    },
+    {
+      "title" : "Pecs",
+      "filename" : "Hunks.gif",
+      "description" : "men muscles"
+    },
+    {
+      "title" : "crazy dance",
+      "filename" : "Moving-animated-picture-of-dancin-dude.gif",
+      "description" : "crazy dance"
+    },
+    {
+      "title" : "dancing baby",
+      "filename" : "baby_dancing.gif",
+      "description" : "dancing baby"
+    },
+    {
+      "title" : "Obama Money",
+      "filename" : "Obama-bucks-animated-money-gif.gif",
+      "description" : "Obama Money"
+    },
+    {
+      "title" : "banana fall",
+      "filename" : "the-tables-have-turned.gif",
+      "description" : "banana fall"
+    },
+    {
+      "title" : "kitten dance",
+      "filename" : "Cute-little-kitty-wearing-blue-toque-dancing-to-and-fro-to-music.gif",
+      "description" : "kitten dance"
+    },
+    {
+      "title" : "cheetah music",
+      "filename" : "1684animalleopardheadph.gif",
+      "description" : "cheetah music headphones"
+    },
+    {
+      "title" : "nyancat pastry",
+      "filename" : "nyan-cat-animation-art.gif",
+      "description" : "cat pastry"
+    },
+    {
+      "title" : "cat can",
+      "filename" : "Cat-in-a-can1.gif",
+      "description" : "cat trash hide"
+    },
+    {
+      "title" : "cat dog fight",
+      "filename" : "gifki_012.gif",
+      "description" : "cat dog fight"
+    },
+    {
+      "title" : "cat hello",
+      "filename" : "oie_3052622KmCWMAJE (1).gif",
+      "description" : "cat hello"
+    },
+    {
+      "title" : "turtle chasing dog",
+      "filename" : "tortoise_chases_dog_s.gif",
+      "description" : "turtle dog fear"
+    },
+    {
+      "title" : "dachshundt-on-record-player-turntable",
+      "filename" : "dachshundt-on-record-player-turntable.gif",
+      "description" : "dog music record spin"
+    },
+    {
+      "title" : "pancake dj",
+      "filename" : "pamela-polishes-pancakes.gif",
+      "description" : "pancake music bikini"
+    },
+    {
+      "title" : "dancing tigersuite",
+      "filename" : "Dancing-tigers.gif",
+      "description" : "dancing tiger costume"
+    },
+    {
+      "title" : "headchop",
+      "filename" : "azn-girl-vs-cement.gif",
+      "description" : "karate head destroy"
+    },
+    {
+      "title" : "forrest gump ping-pong",
+      "filename" : "Moving-animated-picture-of-ping-pong-tournament.gif",
+      "description" : "table tennis"
+    },
+    {
+      "title" : "pong",
+      "filename" : "pong-animated-gif.gif",
+      "description" : "pong computer game"
+    },
+    {
+      "title" : "question_mark",
+      "filename" : "question_mark.gif",
+      "description" : "question unknown"
+    },
+    {
+      "title" : "Animated-swirling-question-mark-picture-moving",
+      "filename" : "Animated-swirling-question-mark-picture-moving.gif",
+      "description" : "question mystery"
+    },
+    {
+      "title" : "Muppet Question",
+      "filename" : "mupper_question.gif",
+      "description" : "question muppet answer"
+    },
+    {
+      "title" : "earth clouds",
+      "filename" : "earth.gif",
+      "description" : "earth clouds"
+    },
+    {
+      "title" : "moon rover",
+      "filename" : "moon_rover.gif",
+      "description" : "moon astronaut driving"
+    },
+    {
+      "title" : "chemicals",
+      "filename" : "chemicals.gif",
+      "description" : "chemicals experiment"
+    },
+    {
+      "title" : "nuke",
+      "filename" : "nuke.gif",
+      "description" : "bomb nuclear destroy"
     }
   ]
 }
