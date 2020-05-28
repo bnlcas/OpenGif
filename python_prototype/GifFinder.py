@@ -20,7 +20,7 @@ class GifFinder():
         print('ready')
 
     def LoadGifData(self):
-        f = open('../Data/GIF_Data/gif_data.json', 'r')
+        f = open('../Data/Gif_Data/gif_data.json', 'r')
         json_data = json.load(f)
         gif_data = json_data['gifs']
         self.gif_filenames = [gif['filename']  for gif in gif_data]
@@ -58,7 +58,7 @@ class GifFinder():
             phrase_vec_norm = phrase_vec/(np.linalg.norm(phrase_vec))
             return phrase_vec_norm
         else:
-            print('no words recognized in phrase')
+            print('no words recognized in phrase: ' + phrase)
             phrase_vec = self.word_dict['question']
             phrase_vec_norm = phrase_vec/(np.linalg.norm(phrase_vec))
             return phrase_vec_norm

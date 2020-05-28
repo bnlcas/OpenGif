@@ -17,3 +17,13 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding: 20px 5px;
+  margin: 10px 5px;
+}
