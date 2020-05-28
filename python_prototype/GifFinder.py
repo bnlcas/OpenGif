@@ -6,40 +6,32 @@ Created on Sun Mar 11 13:11:32 2018
 @author: benjaminlucas
 """
 import numpy as np
-import io
+import pickle
 import json
 
 class GifFinder():
-    def __init__(self, word_vector_datafile = '../WordVectors/word_vectors.vec', total_word_count = 20000):
-        self.word_vector_dimension = 300
-        self.total_word_count = total_word_count
+    def __init__(self, word_vector_datafile = '../Data/WordVectors/word_dict.pkl'):
+        self.word_vector_dimension = 0
+        self.total_word_count = 0
         self.LoadGifData()
         print('loading word vectors')
-        self.word_dict = self.LoadWordVectors(word_vector_datafile, total_word_count)
+        self.word_dict = self.LoadWordVectors(word_vector_datafile)
         self.gif_matrix = self.GenerateGifMatrix()
         print('ready')
 
     def LoadGifData(self):
-        f = open('../GIF_Data/gif_data.json', 'r')
+        f = open('../Data/GIF_Data/gif_data.json', 'r')
         json_data = json.load(f)
         gif_data = json_data['gifs']
         self.gif_filenames = [gif['filename']  for gif in gif_data]
         self.gif_titles = [gif['title']  for gif in gif_data]
         self.gif_descriptions = [gif['description']  for gif in gif_data]
 
-    def LoadWordVectors(self, word_vector_datafile, n_words):
-        f = io.open(word_vector_datafile, 'r', encoding='utf-8', newline='\n', errors='ignore')
-        n, d = map(int, f.readline().split())
-        self.word_vector_dimension = d
-        word_dict = {}
-        if(n_words <= 0):
-            n_words = n
-        else:
-            n_words = min(n, n_words)
-        for i in range(n_words):
-            line = f.readline()
-            tokens = line.rstrip().split(' ')
-            word_dict[tokens[0]] = [float(x) for x in tokens[1:]]
+    def LoadWordVectors(self, word_vector_datafile):
+        with open(word_vector_datafile, 'rb') as f:
+            word_dict = pickle.load(f)
+        self.total_word_count = len(word_dict.keys())
+        self.word_vector_dimension = len(next(iter(word_dict.values())))
         return word_dict
 
     def GenerateGifMatrix(self):

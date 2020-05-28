@@ -4,7 +4,7 @@ from flask import render_template
 from GifFinder import GifFinder
 import json
 
-gif_finder = GifFinder(word_vector_datafile = '../WordVectors/word_vectors.vec', total_word_count = 10000)
+gif_finder = GifFinder(word_vector_datafile = '../Data/WordVectors/word_dict.pkl')
 app = Flask(__name__,  template_folder='../web_interface', static_folder='../web_interface/static')
 #static_folder='web/static',
 #template_folder='web/templates'
@@ -40,7 +40,6 @@ def query():
             }
         ]
     }
-    print(json.dumps(result))
     return json.dumps(result)
 
 @app.route("/")
