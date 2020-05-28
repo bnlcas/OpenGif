@@ -67,11 +67,9 @@ class GifFinder():
             return phrase_vec_norm
         else:
             print('no words recognized in phrase')
-            if('question' in self.word_dict):
-                phrase_vec = self.word_dict['question'])
-                return phrase_vec
-            else:
-                return [1/np.sqrt(self.word_vector_dimension)] * self.word_vector_dimension
+            phrase_vec = self.word_dict['question']
+            phrase_vec_norm = phrase_vec/(np.linalg.norm(phrase_vec))
+            return phrase_vec_norm
 
     def FindGif(self, search_phrase, n_results = 5):
         search_phrase_vector = self.MakePhraseVector(search_phrase)
