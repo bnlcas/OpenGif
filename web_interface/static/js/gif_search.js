@@ -1,6 +1,8 @@
 //Contains the basic script for the UI of a search bar
 var entryField = document.getElementById("input_field");
 var outputDisplay = document.getElementById("results");
+var outputGIF = document.getElementById("result1");
+
 var search_url = 'http://127.0.0.1:5000/query';
 var search_term = "";
 
@@ -32,5 +34,6 @@ function SearchGIFs()
 function UpdateDisplay(results)
 {
   search_term = results;
-  outputDisplay.innerText = "Suggestions: " + results.result1;
+  outputDisplay.innerText = "Suggestions: " + results.result1_title;
+  outputGIF.src = 'static/gifs/' + results.result1_filename;
 }
