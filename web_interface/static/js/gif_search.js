@@ -2,6 +2,8 @@
 var entryField = document.getElementById("input_field");
 var outputDisplay = document.getElementById("results");
 var outputGIF1 = document.getElementById("result1");
+var outputGIF2 = document.getElementById("result2");
+var outputGIF3 = document.getElementById("result3");
 
 var search_url = 'http://127.0.0.1:5000/query';
 
@@ -34,4 +36,6 @@ function UpdateDisplay(results)
 {
   outputDisplay.innerText = "Suggestions: " + results.results[0].result_title;
   outputGIF1.src = 'static/gifs/' + results.results[0].result_filename;
+  outputGIF2.src = 'static/gifs/' + results.results[1].result_filename;
+  outputGIF3.src = 'static/gifs/' + results.results[2].result_filename;
 }

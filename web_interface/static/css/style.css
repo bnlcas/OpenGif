@@ -6,3 +6,14 @@ body
     margin: 10px 10px;
     line-height: 1.3;
 }
+
+img {
+    padding:5px;
+    margin:5px;
+}
+
+.results
+{
+  display: flex;
+  flex-wrap: wrap;
+}

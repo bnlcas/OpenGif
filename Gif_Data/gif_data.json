@@ -57,7 +57,7 @@
     },
     {
       "title" : "faucet",
-      "filename" : "faucet.g",
+      "filename" : "faucet.gif",
       "description" : "water drop"
     },
     {
@@ -121,11 +121,6 @@
       "description" : "money"
     },
     {
-      "title" : "$100",
-      "filename" : "Moving-picture-flipping-through-hundred-dollar-bills-gif-animation.gif",
-      "description" : "money"
-    },
-    {
       "title" : "parrot dance",
       "filename" : "pretty-birds-dancing-animated-gif.gif",
       "description" : "birds parrot"
@@ -148,12 +143,12 @@
     {
       "title" : "Obama Skateboarding",
       "filename" : "Gif-Obama.gif",
-      "description" : "skateboard"
+      "description" : "skateboard obama change"
     },
     {
       "title" : "Obama Headshake",
       "filename" : "Obama_hurr.gif",
-      "description" : "obama headshake"
+      "description" : "obama head"
     },
     {
       "title" : "happy birthday",
@@ -268,7 +263,7 @@
     {
       "title" : "question_mark",
       "filename" : "question_mark.gif",
-      "description" : "question unknown"
+      "description" : "question"
     },
     {
       "title" : "Animated-swirling-question-mark-picture-moving",
