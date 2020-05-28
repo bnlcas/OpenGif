@@ -4,7 +4,6 @@ var outputDisplay = document.getElementById("results");
 var outputGIF = document.getElementById("result1");
 
 var search_url = 'http://127.0.0.1:5000/query';
-var search_term = "";
 
 $(document).ready(function () {
     $("#input_field").keydown(function(e) {
@@ -33,7 +32,6 @@ function SearchGIFs()
 
 function UpdateDisplay(results)
 {
-  search_term = results;
-  outputDisplay.innerText = "Suggestions: " + results.result1_title;
-  outputGIF.src = 'static/gifs/' + results.result1_filename;
+  outputDisplay.innerText = "Suggestions: " + results.results[0].result_title;
+  outputGIF.src = 'static/gifs/' + results.results[0].result_filename;
 }

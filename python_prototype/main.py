@@ -25,9 +25,22 @@ def query():
     print(search_phrase)
     search_result_inds = gif_finder.FindGif(search_phrase)
     result = {
-    'result1_title': gif_finder.gif_titles[search_result_inds[0]],
-    'result1_filename': gif_finder.gif_filenames[search_result_inds[0]]
+        'results': [
+            {
+                'result_title': gif_finder.gif_titles[search_result_inds[0]],
+                'result_filename': gif_finder.gif_filenames[search_result_inds[0]]
+            },
+            {
+                'result_title': gif_finder.gif_titles[search_result_inds[1]],
+                'result_filename': gif_finder.gif_filenames[search_result_inds[1]]
+            },
+            {
+                'result_title': gif_finder.gif_titles[search_result_inds[2]],
+                'result_filename': gif_finder.gif_filenames[search_result_inds[2]]
+            }
+        ]
     }
+    print(json.dumps(result))
     return json.dumps(result)
 
 @app.route("/")
