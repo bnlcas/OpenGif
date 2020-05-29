@@ -1,7 +1,7 @@
 # OpenGif
 This project provides a basic search tool to help find and share Animated Gifs.
 The basic functionality is similar to exiting gif search engines like Tenor and Giphy. The hope is that messaging applications could use this tool as a secure open source, alternative to existing commercial gif search engines. This project is at a very basic level, but any interest or feedback is appreciated.
-A basic demo can be run at [opengif.net](www.opengif.net).
+A basic demo can be run at www.opengif.net.
 
 ## How to run it:
 Run `./setup.sh` to download and install the necessary data. This will download a set of word vectors from
